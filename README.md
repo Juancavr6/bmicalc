@@ -132,3 +132,10 @@ Cuando : Pulsa el botón guardar resultado
 Entonces : El resultado del paciente se guarda en una base de datos relacional junto con el ID del paciente.
 
 
+-- INTERFAZ --
+
+![Imagen Boceto Interfaz](doc/Boceto1.png)
+![Imagen Captura Interfaz](doc/Interfaz.png)
+
+
+
