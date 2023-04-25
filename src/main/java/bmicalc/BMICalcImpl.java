@@ -1,6 +1,20 @@
 package bmicalc;
 
 public class BMICalcImpl implements BMICalc {
+	
+	private static BMICalcImpl singleInstance = null;
+	
+	private BMICalcImpl () {
+		
+	}
+	
+    public static BMICalcImpl getInstancia() {
+        if (singleInstance == null) {
+        	singleInstance = new BMICalcImpl();
+        }
+        return singleInstance;
+    }
+	
 
 	public double bmi(double mass, double height) throws ArithmeticException {
 		if(mass>0 && height>0)
@@ -29,8 +43,8 @@ public class BMICalcImpl implements BMICalc {
 					if (waistCircumference>80) return true;
 					break;
 				default:
-					//System.out.println("Debe indicar el género con F o M");	
-					throw new RuntimeException("Debe indicar el género con F o M");
+					//System.out.println("Debe indicar el gï¿½nero con F o M");	
+					throw new RuntimeException("Debe indicar el gï¿½nero con F o M");
 			}
 		
 	 return false;

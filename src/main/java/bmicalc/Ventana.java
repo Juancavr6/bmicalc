@@ -274,7 +274,7 @@ public class Ventana extends JFrame implements ActionListener {
 			if(peso.length()>0 && altura.length()>0) {
 				
 				try {
-					BMICalcImpl calc = new BMICalcImpl();
+					BMICalcImpl calc = BMICalcImpl.getInstancia();
 					double resultado= calc.bmi(Double.parseDouble(peso),Double.parseDouble(altura)/100);
 					textBmi.setText("" +String.format("%.2f",resultado));
 					lError.setText("");
@@ -304,7 +304,7 @@ public class Ventana extends JFrame implements ActionListener {
 			if(peso.length()>0 && altura.length()>0) {
 				
 				try {
-					BMICalcImpl calc = new BMICalcImpl();
+					BMICalcImpl calc = BMICalcImpl.getInstancia();
 					String resultado= calc.category(calc.bmi(Double.parseDouble(peso),Double.parseDouble(altura)/100));
 					textCat.setText(resultado);
 					lError.setText("");
@@ -338,7 +338,7 @@ public class Ventana extends JFrame implements ActionListener {
 				String wc = textField_3.getText();
 				
 				try {
-					BMICalcImpl calc = new BMICalcImpl();
+					BMICalcImpl calc = BMICalcImpl.getInstancia();
 					boolean resultado=calc.abdominalObesity(Double.parseDouble(wc),sexo);
 					
 					if(resultado)textObes.setText("SI"); 
