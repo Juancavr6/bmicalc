@@ -275,7 +275,7 @@ public class Ventana extends JFrame implements ActionListener {
 				
 				try {
 					BMICalcImpl calc = BMICalcImpl.getInstancia();
-					double resultado= calc.bmi(Double.parseDouble(peso),Double.parseDouble(altura)/100);
+					double resultado= calc.calculateBodyMassIndex(Double.parseDouble(peso),Double.parseDouble(altura)/100);
 					textBmi.setText("" +String.format("%.2f",resultado));
 					lError.setText("");
 				}
@@ -305,7 +305,7 @@ public class Ventana extends JFrame implements ActionListener {
 				
 				try {
 					BMICalcImpl calc = BMICalcImpl.getInstancia();
-					String resultado= calc.category(calc.bmi(Double.parseDouble(peso),Double.parseDouble(altura)/100));
+					String resultado= calc.category(calc.calculateBodyMassIndex(Double.parseDouble(peso),Double.parseDouble(altura)/100));
 					textCat.setText(resultado);
 					lError.setText("");
 				}

@@ -10,7 +10,7 @@ public class IMCHospitalAdapter implements IMCHospital {
     public Map<Double, String> imc(double altura, double peso) {
     	
     	Map<Double, String> m = new HashMap<Double, String>();
-    	double bmi = singleInst.bmi(altura, peso);
+    	double bmi = singleInst.calculateBodyMassIndex(altura, peso);
     	String cat = singleInst.category(bmi);
     	
     	m.put(bmi, cat);

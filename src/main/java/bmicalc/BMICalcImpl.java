@@ -1,6 +1,6 @@
 package bmicalc;
 
-public class BMICalcImpl implements BMICalc {
+public class BMICalcImpl implements MetabolicMetrics,CardiovascularMetrics {
 	
 	private static BMICalcImpl singleInstance = null;
 	
@@ -16,7 +16,7 @@ public class BMICalcImpl implements BMICalc {
     }
 	
 
-	public double bmi(double mass, double height) throws ArithmeticException {
+	public double calculateBodyMassIndex(double mass, double height) throws ArithmeticException {
 		if(mass>0 && height>0)
 			return mass / (height * height);
 		else throw new ArithmeticException();

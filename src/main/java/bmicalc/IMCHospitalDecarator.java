@@ -27,7 +27,7 @@ public class IMCHospitalDecarator implements BMICalc, IMCStats {
     }
 
 	@Override
-	public double bmi(double mass, double height) {
+	public double calculateBodyMassIndex(double mass, double height) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
