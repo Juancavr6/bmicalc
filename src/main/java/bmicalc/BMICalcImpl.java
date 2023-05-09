@@ -22,13 +22,13 @@ public class BMICalcImpl implements MetabolicMetrics,CardiovascularMetrics {
 		else throw new ArithmeticException();
 	}
 
-	public String category(double bmi) {
-		if (bmi<=0) return "ERROR";
+	public ObesityCategory getObesityCategory(double bmi) {
+		if (bmi<=0) return ObesityCategory.UNDERWEIGHT;
 		
-		else if(bmi<18.5) return "UNDERWEIGHT";
-		else if (bmi<=24.9) return "NORMAL";
-		else if (bmi<=29.9) return "OVERWEIGHT";
-		else return "OBESE";
+		else if(bmi<18.5) return ObesityCategory.UNDERWEIGHT;
+		else if (bmi<=24.9) return ObesityCategory.NORMAL;
+		else if (bmi<=29.9) return ObesityCategory.OVERWEIGHT;
+		else return ObesityCategory.OBESE;
 
 	}
 	public boolean abdominalObesity(double waistCircumference, char gender) throws RuntimeException{

@@ -7,11 +7,11 @@ public class IMCHospitalAdapter implements IMCHospital {
     private static final BMICalcImpl singleInst = BMICalcImpl.getInstancia();
 
     @Override
-    public Map<Double, String> imc(double altura, double peso) {
+    public Map<Double,  ObesityCategory> imc(double altura, double peso) {
     	
-    	Map<Double, String> m = new HashMap<Double, String>();
+    	Map<Double,  ObesityCategory> m = new HashMap<Double,  ObesityCategory>();
     	double bmi = singleInst.calculateBodyMassIndex(altura, peso);
-    	String cat = singleInst.category(bmi);
+    	 ObesityCategory cat = singleInst.getObesityCategory(bmi);
     	
     	m.put(bmi, cat);
     	

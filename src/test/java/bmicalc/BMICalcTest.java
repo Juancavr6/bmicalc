@@ -14,7 +14,7 @@ public class BMICalcTest {
 	public void bmi_1() {
 		boolean thrown = false;
 		try {
-			c.bmi(0, 0);
+			c.calculateBodyMassIndex(0, 0);
 		}catch(ArithmeticException e) {
 			thrown = true ;
 		}
@@ -25,7 +25,7 @@ public class BMICalcTest {
 	public void bmi_2() {
 		boolean thrown = false;
 		try {
-			c.bmi(-1, -1);
+			c.calculateBodyMassIndex(-1, -1);
 		}catch(ArithmeticException e) {
 			thrown = true ;
 		}
@@ -36,47 +36,47 @@ public class BMICalcTest {
 	@DisplayName("bmi_3")
 	public void bmi_3() {
 	
-		assertEquals(c.bmi(81,1.8), 25);
+		assertEquals(c.calculateBodyMassIndex(81,1.8), 25);
 	}
 	@Test
 	@DisplayName("category_4")
 	public void bmi_4() {
-		assertEquals(c.category(0), "ERROR");
+		assertEquals(c.getObesityCategory(0), ObesityCategory.UNDERWEIGHT);
 	}
 	@Test
 	@DisplayName("category_5")
 	public void bmi_5() {
-		assertEquals(c.category(-1), "ERROR");
+		assertEquals(c.getObesityCategory(-1), ObesityCategory.UNDERWEIGHT);
 	}
 	@Test
 	@DisplayName("category_6")
 	public void bmi_6() {
-		assertEquals(c.category(18), "UNDERWEIGHT");
+		assertEquals(c.getObesityCategory(18), ObesityCategory.UNDERWEIGHT);
 	}
 	@Test
 	@DisplayName("category_7")
 	public void bmi_7() {
-		assertEquals(c.category(18.5), "NORMAL");
+		assertEquals(c.getObesityCategory(18.5), ObesityCategory.NORMAL);
 	}
 	@Test
 	@DisplayName("category_8")
 	public void bmi_8() {
-		assertEquals(c.category(24.9), "NORMAL");
+		assertEquals(c.getObesityCategory(24.9), ObesityCategory.NORMAL);
 	}
 	@Test
 	@DisplayName("category_9")
 	public void bmi_9() {
-		assertEquals(c.category(25), "OVERWEIGHT");
+		assertEquals(c.getObesityCategory(25), ObesityCategory.OVERWEIGHT);
 	}
 	@Test
 	@DisplayName("category_10")
 	public void bmi_10() {
-		assertEquals(c.category(29.9), "OVERWEIGHT");
+		assertEquals(c.getObesityCategory(29.9),  ObesityCategory.OVERWEIGHT);
 	}
 	@Test
 	@DisplayName("category_11")
 	public void bmi_11() {
-		assertEquals(c.category(30), "OBESE");
+		assertEquals(c.getObesityCategory(30),  ObesityCategory.OBESE);
 	}
 	@Test
 	@DisplayName("admObsty_12")

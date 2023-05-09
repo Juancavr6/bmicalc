@@ -33,7 +33,7 @@ public class IMCHospitalDecarator implements BMICalc, IMCStats {
 	}
 
 	@Override
-	public String category(double bmi) {
+	public  ObesityCategory getObesityCategory(double bmi) {
 		// TODO Auto-generated method stub
 		return null;
 	}
