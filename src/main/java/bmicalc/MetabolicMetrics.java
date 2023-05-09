@@ -1,5 +1,5 @@
 package bmicalc;
 
 public interface MetabolicMetrics {
-	double abdominalObesity(Gender gender);
+	boolean abdominalObesity(double waistCircumference,Gender gender);
 }

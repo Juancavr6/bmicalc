@@ -1,7 +1,7 @@
 package bmicalc;
 
 
-public class IMCHospitalDecarator implements BMICalc, IMCStats {
+public class IMCHospitalDecarator implements MetabolicMetrics,CardiovascularMetrics, IMCStats {
     private static final BMICalcImpl single = BMICalcImpl.getInstancia();
   
 
@@ -39,7 +39,7 @@ public class IMCHospitalDecarator implements BMICalc, IMCStats {
 	}
 
 	@Override
-	public boolean abdominalObesity(double waistCircumference, char gender) {
+	public boolean abdominalObesity(double waistCircumference, Gender gender) {
 		// TODO Auto-generated method stub
 		return false;
 	}

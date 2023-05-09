@@ -31,15 +31,15 @@ public class BMICalcImpl implements MetabolicMetrics,CardiovascularMetrics {
 		else return ObesityCategory.OBESE;
 
 	}
-	public boolean abdominalObesity(double waistCircumference, char gender) throws RuntimeException{
+	public boolean abdominalObesity(double waistCircumference, Gender gender) throws RuntimeException{
 		
 		
 		if(waistCircumference <= 0 ) throw new RuntimeException("La circunferencia debe ser mayor que 0");
 		else switch(gender) {
-				case 'M' :
+				case MALE :
 					if (waistCircumference>90) return true;				
 					break;
-				case 'F' :
+				case FEMALE :
 					if (waistCircumference>80) return true;
 					break;
 				default:

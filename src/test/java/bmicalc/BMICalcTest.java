@@ -83,7 +83,7 @@ public class BMICalcTest {
 	public void bmi_12() {
 		boolean thrown = false;
 		try {
-			c.abdominalObesity(0, 'M');
+			c.abdominalObesity(0, Gender.MALE);
 		}catch(RuntimeException e) {
 			thrown = true ;
 		}
@@ -95,7 +95,7 @@ public class BMICalcTest {
 	public void bmi_13() {
 		boolean thrown = false;
 		try {
-			c.abdominalObesity(-1, 'M');
+			c.abdominalObesity(-1, Gender.MALE);
 		}catch(RuntimeException e) {
 			thrown = true ;
 		}
@@ -106,7 +106,7 @@ public class BMICalcTest {
 	public void bmi_14() {
 		boolean thrown = false;
 		try {
-			c.abdominalObesity(80, 'G');
+			c.abdominalObesity(80, Gender.FEMALE);
 		}catch(RuntimeException e) {
 			thrown = true ;
 		}
@@ -116,32 +116,32 @@ public class BMICalcTest {
 	@Test
 	@DisplayName("admObsty_15")
 	public void bmi_15() {
-		assertEquals(c.abdominalObesity(89, 'M'), false);
+		assertEquals(c.abdominalObesity(89, Gender.MALE), false);
 	}
 	@Test
 	@DisplayName("admObsty_16")
 	public void bmi_16() {
-		assertEquals(c.abdominalObesity(90, 'M'), false);
+		assertEquals(c.abdominalObesity(90, Gender.MALE), false);
 	}
 	@Test
 	@DisplayName("admObsty_17")
 	public void bmi_17() {
-		assertEquals(c.abdominalObesity(91, 'M'), true);
+		assertEquals(c.abdominalObesity(91, Gender.MALE), true);
 	}
 	@Test
 	@DisplayName("admObsty_18")
 	public void bmi_18() {
-		assertEquals(c.abdominalObesity(79, 'F'), false);
+		assertEquals(c.abdominalObesity(79, Gender.FEMALE), false);
 	}
 	@Test
 	@DisplayName("admObsty_19")
 	public void bmi_19() {
-		assertEquals(c.abdominalObesity(80, 'F'), false);
+		assertEquals(c.abdominalObesity(80,  Gender.FEMALE), false);
 	}
 	@Test
 	@DisplayName("admObsty_20")
 	public void bmi_20() {
-		assertEquals(c.abdominalObesity(81, 'F'), true);
+		assertEquals(c.abdominalObesity(81,  Gender.FEMALE), true);
 	}
 	
 }

@@ -305,8 +305,8 @@ public class Ventana extends JFrame implements ActionListener {
 				
 				try {
 					BMICalcImpl calc = BMICalcImpl.getInstancia();
-					String resultado= calc.category(calc.calculateBodyMassIndex(Double.parseDouble(peso),Double.parseDouble(altura)/100));
-					textCat.setText(resultado);
+					 ObesityCategory resultado= calc.getObesityCategory(calc.calculateBodyMassIndex(Double.parseDouble(peso),Double.parseDouble(altura)/100));
+					textCat.setText(resultado.toString());
 					lError.setText("");
 				}
 				catch(Exception exx) {
@@ -332,9 +332,9 @@ public class Ventana extends JFrame implements ActionListener {
 				lError.setText("ERROR : Debe introducir la circunferencia y el sexo");
 			}
 			else {
-				char sexo;
-				if(rdHombre.isSelected()) sexo='M';
-				else sexo='F';
+				Gender sexo;
+				if(rdHombre.isSelected()) sexo=Gender.MALE;
+				else sexo=Gender.FEMALE;
 				String wc = textField_3.getText();
 				
 				try {
